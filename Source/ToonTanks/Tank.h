@@ -13,6 +13,11 @@ UCLASS()
 class TOONTANKS_API ATank : public ABasePawn
 {
 	GENERATED_BODY()
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 public:
 	ATank();
 
@@ -33,7 +38,13 @@ private:
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	float TurnSpeed = 100.f;
 
+	APlayerController* PlayerControllerRef;
+
 	void Move(float Value);
 
 	void Turn(float Value);
+	
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 };
