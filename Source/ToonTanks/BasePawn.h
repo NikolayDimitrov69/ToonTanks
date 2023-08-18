@@ -18,6 +18,8 @@ public:
 protected:
 
 	void RotateTurret(const FVector& LookAtTarget);
+
+	void Fire();
 	
 private:
 
