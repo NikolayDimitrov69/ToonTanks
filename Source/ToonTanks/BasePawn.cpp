@@ -44,3 +44,8 @@ void ABasePawn::Fire()
 	auto Bullet = GetWorld()->SpawnActor<ABullet>(BulletClass, ProjectileSpawnPoint->GetComponentLocation(), ProjectileSpawnPoint->GetComponentRotation());
 	Bullet->SetOwner(this);
 }
+
+void ABasePawn::HandleDestruction()
+{
+	
+}
