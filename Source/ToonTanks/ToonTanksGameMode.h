@@ -23,6 +23,10 @@ private:
 
 	void HandleStart();
 
+	int32 NumberOfTowers = 0;
+
+	int32 GetNumberOfTowers() const;
+
 public:
 
 	void DestroyedActor(AActor* DestroyedActor);
@@ -32,5 +36,8 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void StartGame();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void GameOver(bool bWonGame);
 	
 };
