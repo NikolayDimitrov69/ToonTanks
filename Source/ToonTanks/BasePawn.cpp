@@ -6,6 +6,8 @@
 #include "Kismet/GameplayStatics.h"
 //#include "DrawDebugHelpers.h"
 #include "Bullet.h"
+#include "Particles/ParticleSystem.h"
+#include "Sound/SoundBase.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
@@ -47,5 +49,12 @@ void ABasePawn::Fire()
 
 void ABasePawn::HandleDestruction()
 {
-	
+	if (DeathParticle)
+	{
+		UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticle, GetActorLocation(), GetActorRotation());
+	}
+	if (DeathSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+	}
 }
