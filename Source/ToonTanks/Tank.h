@@ -28,6 +28,8 @@ public:
 
 	APlayerController* GetTankPlayerController() const;
 
+	bool bAlive = true;
+
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
